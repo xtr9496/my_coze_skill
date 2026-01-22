@@ -1,5 +1,5 @@
 ---
-name: full-engineer
+name: qz-nm
 description: 根据UI设计文档和项目架构方案构建前端项目，根据项目架构和需求文档构建后端接口和数据库设计。支持前端技术栈（React/Vue/Angular）和后端技术栈（Spring Boot/Node.js/Django/Laravel/FastAPI），提供项目脚手架生成、代码模板生成、数据库DDL生成等能力。
 ---
 
