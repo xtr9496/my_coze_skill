@@ -60,10 +60,19 @@ description: 模拟10年经验项目经理，以犀利、独到的角度对项�
 
 ## 资源索引
 
+- 必要脚本:
+  - [scripts/generate_review_report.py](scripts/generate_review_report.py)（生成结构化评审报告）
+  - [scripts/analyze_risk.py](scripts/analyze_risk.py)（自动识别需求风险）
+
+- 模板资源:
+  - [assets/templates/review_template.md](assets/templates/review_template.md)（评审报告模板）
+  - [assets/templates/questionnaire.json](assets/templates/questionnaire.json)（需求调研问卷模板）
+
 - 领域参考:
   - [references/questioning-framework.md](references/questioning-framework.md): 五维犀利提问框架（核心指导文档）
   - [references/risk-checklist.md](references/risk-checklist.md): 项目风险检查清单
   - [references/pm-experience.md](references/pm-experience.md): 10年经验洞察与常见陷阱
+  - [references/case-studies.md](references/case-studies.md): 成功与失败案例库
 
 ## 注意事项
 

@@ -1,0 +1,195 @@
+{
+  "version": "1.0",
+  "name": "需求调研问卷",
+  "description": "用于需求评审前的信息收集",
+  "sections": [
+    {
+      "name": "基本信息",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "需求名称是什么？",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "q2",
+          "text": "需求的业务背景是什么？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q3",
+          "text": "需求的来源是什么？（业务方/用户反馈/技术驱动）",
+          "type": "select",
+          "options": ["业务方", "用户反馈", "技术驱动", "合规要求", "其他"],
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "技术维度",
+      "questions": [
+        {
+          "id": "q4",
+          "text": "计划使用什么技术栈？团队是否熟悉？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q5",
+          "text": "技术方案是否经过验证？有原型或Demo吗？",
+          "type": "select",
+          "options": ["有完整验证", "有初步验证", "未验证"],
+          "required": true
+        },
+        {
+          "id": "q6",
+          "text": "系统的预期规模是多少？（并发用户数/数据量）",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "q7",
+          "text": "技术风险点有哪些？",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "商业维度",
+      "questions": [
+        {
+          "id": "q8",
+          "text": "这个需求的商业目标是什么？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q9",
+          "text": "如何衡量需求成功？（具体指标）",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q10",
+          "text": "预期ROI是多少？",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "q11",
+          "text": "不做这个需求会有什么后果？",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "用户维度",
+      "questions": [
+        {
+          "id": "q12",
+          "text": "目标用户是谁？用户画像是什么？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q13",
+          "text": "用户现在是如何解决这个问题的？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q14",
+          "text": "用户需求是否经过验证？（访谈/问卷/数据）",
+          "type": "select",
+          "options": ["有用户访谈", "有问卷调研", "有数据分析", "未验证"],
+          "required": true
+        },
+        {
+          "id": "q15",
+          "text": "用户愿意为这个功能付出什么代价？",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "团队维度",
+      "questions": [
+        {
+          "id": "q16",
+          "text": "团队有相关经验吗？需要多长时间上手？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q17",
+          "text": "参与这个需求的团队成员有哪些？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q18",
+          "text": "涉及哪些外部协作？（设计/测试/运维/其他团队）",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "q19",
+          "text": "团队对这个需求的信心指数（1-10）？",
+          "type": "number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "时间线",
+      "questions": [
+        {
+          "id": "q20",
+          "text": "期望的上线时间是什么？",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "q21",
+          "text": "时间表是如何计算的？任务拆解了吗？",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "q22",
+          "text": "关键里程碑有哪些？",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "q23",
+          "text": "有哪些外部依赖？",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "q24",
+          "text": "预留了多少缓冲时间？",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "其他",
+      "questions": [
+        {
+          "id": "q25",
+          "text": "有什么需要特别说明的信息？",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

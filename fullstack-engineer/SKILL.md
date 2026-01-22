@@ -23,203 +23,27 @@ description: 根据UI设计文档和项目架构方案构建前端项目，根�
 
 ### 1. 前端开发流程
 
-#### 1.1 技术栈选型
-根据项目需求和团队情况选择前端技术栈：
-- **React**：组件化强、生态丰富、适合大型应用
-- **Vue**：上手简单、文档完善、适合快速开发
-- **Angular**：企业级、框架完整、适合大型团队
-
-参考 [references/frontend-stack-guide.md](references/frontend-stack-guide.md)
-
-#### 1.2 项目初始化
-调用 `scripts/generate_frontend_project.py` 生成前端项目骨架：
-
-**参数说明**：
-- `--project-name`: 项目名称
-- `--tech-stack`: 技术栈（react/vue/angular）
-- `--output-path`: 输出路径（默认当前目录）
-
-**示例**：
-```bash
-python scripts/generate_frontend_project.py \
-  --project-name my-app \
-  --tech-stack react \
-  --output-path ./projects
-```
-
-#### 1.3 组件开发
-根据UI设计文档，智能体分析页面结构：
-- 识别页面组件（首页、列表页、详情页等）
-- 识别业务组件（按钮、表单、表格等）
-- 设计组件层级和状态管理
-
-调用脚本生成组件代码模板，然后由智能体填充业务逻辑。
-
-#### 1.4 路由配置
-- 定义路由表
-- 配置路由守卫
-- 实现页面跳转逻辑
-
-#### 1.5 状态管理
-- 选择状态管理方案（Redux/Vuex/Context API）
-- 设计状态结构
-- 实现状态更新逻辑
-
-#### 1.6 API调用封装
-- 封装HTTP请求库（axios/fetch）
-- 实现请求拦截和响应拦截
-- 统一错误处理
+参考 [references/frontend-development.md](references/frontend-development.md) 获取详细指南：
+- 技术栈选型（React/Vue/Angular对比）
+- 项目初始化命令
+- 组件开发最佳实践
+- 状态管理选择
+- API调用封装
+- 路由配置
 
 ### 2. 后端开发流程
 
-#### 2.1 技术栈选型
-根据项目需求选择后端技术栈：
-- **Spring Boot**：Java生态、企业级、适合复杂业务
-- **Node.js**：JavaScript全栈、高并发、适合实时应用
-- **Django**：Python生态、快速开发、适合内容管理
-- **Laravel**：PHP生态、开发效率高、适合中小型Web应用
-- **FastAPI**：Python生态、高性能、适合API开发和AI/ML应用
-
-参考 [references/backend-stack-guide.md](references/backend-stack-guide.md)
-
-#### 2.2 项目初始化
-调用 `scripts/generate_backend_api.py` 生成后端项目骨架：
-
-**参数说明**：
-- `--project-path`: 项目路径
-- `--tech-stack`: 技术栈（springboot/nodejs/django）
-- `--base-package`: 基础包名
-
-**示例**：
-```bash
-python scripts/generate_backend_api.py \
-  --project-path ./backend \
-  --tech-stack springboot \
-  --base-package com.example.myapp
-```
-
-#### 2.3 接口设计
-根据需求文档设计RESTful API：
-- 定义资源路径（/api/users、/api/orders）
-- 定义HTTP方法（GET/POST/PUT/DELETE）
-- 定义请求参数和响应格式
-
-参考 [references/api-design-best-practices.md](references/api-design-best-practices.md)
-
-#### 2.4 代码生成
-调用脚本生成分层架构代码：
-- **Controller层**：处理HTTP请求，参数验证
-- **Service层**：业务逻辑处理
-- **Repository/DAO层**：数据访问
-
-**接口定义文件格式**（JSON）：
-```json
-{
-  "apis": [
-    {
-      "name": "UserController",
-      "path": "/api/users",
-      "methods": [
-        {
-          "name": "getUsers",
-          "httpMethod": "GET",
-          "description": "获取用户列表",
-          "parameters": [
-            {"name": "page", "type": "Integer", "required": false},
-            {"name": "size", "type": "Integer", "required": false}
-          ],
-          "responseType": "List<UserVO>"
-        }
-      ]
-    }
-  ]
-}
-```
-
-#### 2.5 数据模型生成
-根据接口定义生成数据模型：
-- **Entity**：数据库实体
-- **DTO**：数据传输对象
-- **VO**：视图对象
+参考 [references/backend-development.md](references/backend-development.md) 获取详细指南：
+- 技术栈选型（Spring Boot/Node.js/Django/FastAPI对比）
+- 项目初始化命令
+- 分层架构设计
+- 接口设计规范
+- Repository层实现
+- 数据库设计
 
 ### 3. 数据库设计流程
 
-#### 3.1 需求分析
-智能体分析需求文档，识别核心实体和关系：
-- 用户、订单、商品等业务实体
-- 一对一、一对多、多对多关系
-- 业务规则和约束
-
-参考 [references/database-design-guide.md](references/database-design-guide.md)
-
-#### 3.2 表结构设计
-设计表结构，定义字段：
-- 字段名称、类型、长度
-- 主键、外键、索引
-- 默认值、非空约束、唯一约束
-
-#### 3.3 DDL脚本生成
-调用 `scripts/generate_database_ddl.py` 生成SQL脚本：
-
-**参数说明**：
-- `--schema-file`: 表结构定义文件（JSON格式）
-- `--db-type`: 数据库类型（mysql/postgresql）
-- `--output-file`: 输出文件路径
-
-**表结构定义文件格式**（JSON）：
-```json
-{
-  "tables": [
-    {
-      "name": "users",
-      "comment": "用户表",
-      "columns": [
-        {
-          "name": "id",
-          "type": "BIGINT",
-          "primary": true,
-          "autoIncrement": true,
-          "comment": "用户ID"
-        },
-        {
-          "name": "username",
-          "type": "VARCHAR(50)",
-          "notNull": true,
-          "unique": true,
-          "comment": "用户名"
-        },
-        {
-          "name": "email",
-          "type": "VARCHAR(100)",
-          "notNull": true,
-          "comment": "邮箱"
-        },
-        {
-          "name": "created_at",
-          "type": "DATETIME",
-          "defaultValue": "CURRENT_TIMESTAMP",
-          "comment": "创建时间"
-        }
-      ],
-      "indexes": [
-        {
-          "name": "idx_email",
-          "columns": ["email"],
-          "comment": "邮箱索引"
-        }
-      ]
-    }
-  ]
-}
-```
-
-**示例**：
-```bash
-python scripts/generate_database_ddl.py \
-  --schema-file ./database/schema.json \
-  --db-type mysql \
-  --output-file ./database/schema.sql
-```
+参考 [references/database-design-guide.md](references/database-design-guide.md) 获取完整指南。
 
 ## 资源索引
 
@@ -228,9 +52,12 @@ python scripts/generate_database_ddl.py \
   - [scripts/generate_backend_api.py](scripts/generate_backend_api.py)（生成后端接口代码）
   - [scripts/generate_database_ddl.py](scripts/generate_database_ddl.py)（生成数据库DDL脚本）
 
-- 领域参考：
-  - [references/frontend-stack-guide.md](references/frontend-stack-guide.md)（前端技术栈选型）
-  - [references/backend-stack-guide.md](references/backend-stack-guide.md)（后端技术栈选型）
+- 详细指南：
+  - [references/frontend-development.md](references/frontend-development.md)（前端开发完整流程）
+  - [references/backend-development.md](references/backend-development.md)（后端开发完整流程）
+  - [references/component-patterns.md](references/component-patterns.md)（前端组件设计模式）
+  - [references/frontend-stack-guide.md](references/frontend-stack-guide.md)（前端技术栈选型对比）
+  - [references/backend-stack-guide.md](references/backend-stack-guide.md)（后端技术栈选型对比）
   - [references/api-design-best-practices.md](references/api-design-best-practices.md)（API设计规范）
   - [references/database-design-guide.md](references/database-design-guide.md)（数据库设计规范）
 

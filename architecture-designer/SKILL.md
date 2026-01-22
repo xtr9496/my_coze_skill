@@ -100,9 +100,18 @@ description: 根据项目需求文档进行系统架构设计，包括技术选�
 
 ## 资源索引
 
+- 必要脚本:
+  - [scripts/generate_architecture_doc.py](scripts/generate_architecture_doc.py)（生成完整架构设计文档）
+  - [scripts/middleware_selector.py](scripts/middleware_selector.py)（智能中间件选型推荐）
+
+- 模板资源:
+  - [assets/templates/requirements_template.md](assets/templates/requirements_template.md)（需求收集模板）
+  - [assets/templates/adr_template.md](assets/templates/adr_template.md)（架构决策记录模板）
+
 - 领域参考：
   - [references/middleware-selection.md](references/middleware-selection.md)（何时读取：需要选择中间件时）
   - [references/architecture-patterns.md](references/architecture-patterns.md)（何时读取：确定架构模式时）
+  - [references/architecture-patterns-comparison.md](references/architecture-patterns-comparison.md)（何时读取：架构模式选择决策）
   - [references/best-practices.md](references/best-practices.md)（何时读取：设计架构细节时）
 
 ## 注意事项
